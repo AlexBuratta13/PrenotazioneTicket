@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrenotazioneTicket"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="0,0,0,-313">
+        Title="MainWindow" Height="730" Width="500">
+    <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
-            <Border Background="AntiqueWhite" BorderBrush="Gray" BorderThickness="3" CornerRadius="20" Height="732">
+            <Border Background="AntiqueWhite" BorderBrush="Gray" BorderThickness="3" CornerRadius="20">
                 <StackPanel>
                     <Grid>
 
@@ -38,7 +38,7 @@
 
                         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <Border BorderBrush="Brown" BorderThickness="2" CornerRadius="20" Height="45" Width="320">
-                                <Label Content="Prenota qui il tuo Biglietto" FontSize="22" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="Black"/>
+                                <Label Content="Prenotazione Biglietto" FontSize="24" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="black"/>
                             </Border>
                         </StackPanel>
 
@@ -47,7 +47,7 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBox Text="" Name="txtNome" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="33" Width="200"/>
+                            <TextBox Text="" Name="txt_Nome" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="33" Width="200"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -55,7 +55,7 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBox Text="" Name="txtCognome" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="33" Width="200"/>
+                            <TextBox Text="" Name="txt_Cognome" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="33" Width="200"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -63,7 +63,7 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <TextBox Text="" Name="txtCellulare" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="33" Width="200"/>
+                            <TextBox Text="" Name="txt_Cellulare" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="33" Width="200"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -75,7 +75,7 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <Button Name="btnAggiungiCliente" Content="Aggiungi Cliente" Width="180" Height="33" FontSize="20" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown"/>
+                            <Button Name="btnAggiungiCliente" Content="Aggiungi Cliente" Width="180" Height="33" FontSize="20" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" Click="btnAggiungiCliente_Click"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -87,7 +87,7 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <DatePicker Name="dpData" Width="250" Height="43" FontSize="20" VerticalContentAlignment="Center"/>
+                            <DatePicker Name="dp_Data" Width="250" Height="43" FontSize="20" VerticalContentAlignment="Center"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -135,7 +135,7 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <ListBox Name="lb2" FontSize="20" Width="400" Height="66"/>
+                            <ListBox Name="lb_Risultato" FontSize="20" Width="400" Height="66"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="15" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
