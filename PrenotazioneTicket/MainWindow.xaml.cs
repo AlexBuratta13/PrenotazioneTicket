@@ -24,6 +24,7 @@ namespace PrenotazioneTicket
         public MainWindow()
         {
             InitializeComponent();
+            btnM.IsChecked = true;
         }
 
         private void btnAggiungiCliente_Click(object sender, RoutedEventArgs e)
