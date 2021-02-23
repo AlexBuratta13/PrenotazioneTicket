@@ -95,11 +95,11 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <ComboBox Name="cmbOrari" Width="200" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <ComboBox Name="cmbOrari" Width="200" Height="33" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="cmbOrari_SelectionChanged"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="9" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <Button Name="btnAggiungi" Content="Aggiungi" Width="140" Height="33" FontSize="20" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown"/>
+                            <Button Name="btnAggiungi" Content="Aggiungi" Width="140" Height="33" FontSize="20" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" Click="btnAggiungi_Click"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">

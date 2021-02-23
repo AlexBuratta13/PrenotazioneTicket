@@ -12,6 +12,7 @@ namespace LibraryCliente
         public string Cognome { get; set; }
         private string cellulare;
         private string sesso;
+        public List<Prenotazione> Prenotazioni { get; set; } = new List<Prenotazione>();
 
         public Cliente(string nome, string cognome)
         {
@@ -37,7 +38,7 @@ namespace LibraryCliente
                     throw new Exception("Puoi inserire solo numeri!");
                 }
             }
-            else throw new Exception("Il campo 'cellulare' non contiene 10 numeri!");
+            else throw new Exception("Controlla il campo cellulare!");
         }
 
         public string GetSesso()

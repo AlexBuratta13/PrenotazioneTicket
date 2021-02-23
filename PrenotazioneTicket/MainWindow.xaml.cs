@@ -26,7 +26,9 @@ namespace PrenotazioneTicket
             InitializeComponent();
             btnM.IsChecked = true;
         }
-
+        public List<Prenotazione> Prenotazioni { get; set; } = new List<Prenotazione>();
+        public List<Cliente> Clienti { get; set; } = new List<Cliente>();
+        public string[] orari = new string[] { "18:00", "20:30", "23:00" };
         private void btnAggiungiCliente_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -47,6 +49,7 @@ namespace PrenotazioneTicket
                 else throw new Exception("Inserisci un cognome!");
 
                 Cliente cliente = new Cliente(nome, cognome);
+                Clienti.Add(cliente);
 
                 cliente.SetCellulare(txt_Cellulare.Text);
                 if (btnM.IsChecked == true)
@@ -69,6 +72,57 @@ namespace PrenotazioneTicket
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAggiungi_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int cli = cmbClienti.SelectedIndex;
+                if (cli == -1)
+                {
+                    throw new Exception("Devi selezionare un cliente!");
+                }
+                Cliente cliente = Clienti[cli];
+                DateTime data;
+                if (dp_Data.SelectedDate != null)
+                {
+                    data = dp_Data.SelectedDate.Value;
+                }
+                else
+                {
+                    throw new Exception("Devi selezionare una data!");
+                }
+                string ora;
+                if (cmbOrari.SelectedIndex != -1)
+                {
+                    ora = cmbOrari.Text;
+                }
+                else
+                {
+                    throw new Exception("Devi selezionare un orario!");
+                }
+                Prenotazione p = new Prenotazione(cliente, data, ora);
+                cliente.Prenotazioni.Add(p);
+                Prenotazioni.Add(p);
+                lb1.Items.Add(p.Stampa());
+
+                cmbClienti.SelectedIndex = -1;
+                dp_Data.SelectedDate = null;
+                cmbOrari.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+        }
+
+        private void cmbOrari_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (string s in orari)
+            {
+                cmbOrari.Items.Add(s);
             }
         }
     }
