@@ -28,7 +28,7 @@ namespace PrenotazioneTicket
         }
         public List<Prenotazione> Prenotazioni { get; set; } = new List<Prenotazione>();
         public List<Cliente> Clienti { get; set; } = new List<Cliente>();
-        public string[] orari = new string[] { "18:00", "20:30", "23:00" };
+        public string[] orari = new string[] { "17:00", "20:00", "23:59" };
         private void btnAggiungiCliente_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -79,12 +79,12 @@ namespace PrenotazioneTicket
         {
             try
             {
-                int cli = cmbClienti.SelectedIndex;
-                if (cli == -1)
+                int client = cmbClienti.SelectedIndex;
+                if (client == -1)
                 {
                     throw new Exception("Devi selezionare un cliente!");
                 }
-                Cliente cliente = Clienti[cli];
+                Cliente cliente = Clienti[client];
                 DateTime data;
                 if (dp_Data.SelectedDate != null)
                 {
@@ -120,10 +120,46 @@ namespace PrenotazioneTicket
 
         private void cmbOrari_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (string s in orari)
+            foreach (string l in orari)
             {
-                cmbOrari.Items.Add(s);
+                cmbOrari.Items.Add(l);
             }
+        }
+
+        private void btnEsci_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCancella_Click(object sender, RoutedEventArgs e)
+        {
+            int selection = lb1.SelectedIndex;
+            if (selection > 0)
+            {
+                string nome = Prenotazioni[selection].Cliente.ToString();
+                for (int i = 0; i < Clienti.Count; i++)
+                {
+                    if (nome == Clienti[i].ToString())
+                    {
+                        Clienti[i].RimuoviPrenotazione(Prenotazioni[selection]);
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Attenzione", "Non è stato selezionato alcun elemento.", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void btnPrenotazioniCliente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPrenotazioniEvento_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

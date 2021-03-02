@@ -23,7 +23,7 @@ namespace LibraryCliente
         private double CostoPrenotazione()
         {
             double costo = PREZZO;
-            if ((Cliente.GetSesso() == "M" && this.Ora == "18:00") || Cliente.GetSesso() == "F")
+            if ((Cliente.GetSesso() == "M" && this.Ora == "17:00") || Cliente.GetSesso() == "F")
             {
                 costo = costo - (costo * 10) / 100;
             }

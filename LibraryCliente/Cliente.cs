@@ -59,5 +59,9 @@ namespace LibraryCliente
         {
             return $"{Nome} {Cognome}";
         }
+        public void RimuoviPrenotazione(Prenotazione prenotazione)
+        {
+            Prenotazioni.Remove(prenotazione);
+        }
     }
 }
